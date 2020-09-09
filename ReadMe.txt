@@ -66,4 +66,9 @@ Links:
 Planning Doc: https://docs.google.com/document/d/1VYXud5_oEl2wZWk5TTn8lKCCwLzNA9Tw_ujpUOn56Y8/edit?usp=sharing
 Wireframe: https://docs.google.com/spreadsheets/d/1eLQ2sp8n8wxO2irj4cxFPYNqRq8QDCX13HvQF6ZbHEo/edit?usp=sharing
 
+Instructions!!! 
+1) Make sure you are logged in before trying to create a tab or place an order.
+2) The Admin button is where my intended Admin views would be, I wasn't able to figure out how to get an admin only view. 
+3) Have fun! 
+
 
