@@ -8,7 +8,7 @@ Table of Contents:
 	B) Menu (where the customer orders) 
 	C) Tab 
 3. Future Features
-4. Local Instructions
+4. Links & Instructions
 
 ********************************************************************************************
 ---------------------------------------1. Concept-------------------------------------------
@@ -56,5 +56,14 @@ The tab table allows users to create a tab and when they order a drink it will a
 ********************************************************************************************
 
 I couldn't quite get things working to just show an admin view. On the front end as you can see a Navigation tab titled "Admin." This is where the bar employees can look at open orders. I wanted to make this admin only. For now, anyone can look at it, but you get the idea. 
+
+********************************************************************************************
+--------------------------------------4. Links and Instructions-------------------------------------------
+
+********************************************************************************************
+
+Links: 
+Planning Doc: https://docs.google.com/document/d/1VYXud5_oEl2wZWk5TTn8lKCCwLzNA9Tw_ujpUOn56Y8/edit?usp=sharing
+Wireframe: https://docs.google.com/spreadsheets/d/1eLQ2sp8n8wxO2irj4cxFPYNqRq8QDCX13HvQF6ZbHEo/edit?usp=sharing
 
 
