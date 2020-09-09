@@ -1,0 +1,85 @@
+﻿@model IEnumerable<APPers.Models.Menu.MenuListItem>
+
+@{
+    ViewBag.Title = "My Orders";
+}
+
+<h2>My Order History</h2>
+
+<p>
+    <input type="button" class="btn btn-primary btn-secondary" value="Create New" onclick="location.href='@Url.Action("Create")'" />
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderId)
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.TabId)
+            </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.TabName)
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.BeerId)
+            </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.BeerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderTotal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderComplete)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedUtc)
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.ModifiedUtc)
+            </th>*@
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderId)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.TabId)
+                </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.TabName)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.BeerId)
+                </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.BeerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderTotal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderComplete)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedUtc)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.ModifiedUtc)
+                </td>*@
+            <td>
+
+                @if (item.OrderComplete == false)
+                {
+                <input type="button" class="btn btn-primary  btn-sm" value="Cancel Order" onclick="location.href='@Url.Action("Delete", new { id = item.OrderId })'" />}
+            </td>
+
+
+        </tr>
+    }
+
+</table>

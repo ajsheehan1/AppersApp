@@ -1,0 +1,130 @@
+﻿@model IEnumerable<APPers.Models.Tab.TabListItem>
+
+@{
+    ViewBag.Title = "TabsAdminView";
+}
+
+<h2>Open Tabs</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TabId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GrandTotal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TabPaid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedUtc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ModifiedUtc)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+
+        if (item.TabPaid == false)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TabId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GrandTotal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TabPaid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedUtc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ModifiedUtc)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.TabId}) |
+                    @Html.ActionLink("Details", "Details", new { id = item.TabId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.TabId })
+                </td>
+            </tr>
+        }
+    }
+
+</table>
+
+<hr />
+<hr />
+
+<h2>Closed Tabs</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TabId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GrandTotal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TabPaid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedUtc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ModifiedUtc)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+
+        if (item.TabPaid == true)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TabId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GrandTotal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TabPaid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedUtc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ModifiedUtc)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.TabId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.TabId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.TabId })
+                </td>
+            </tr>
+        }
+    }
+
+</table>

@@ -1,0 +1,42 @@
+﻿@model IEnumerable<APPers.Models.Tab.TabListItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="jumbotron">
+    <div class="row">
+        <center><img src="https://www.freelogodesign.org/file/app/client/thumb/165cb57b-894f-484a-94eb-200eae22d696_200x200.png?1599062759947" /></center></div>
+    </div>
+
+
+
+<div class="container">
+<div class="row">
+
+    <div class="col-md-3" id="clickhere">
+
+        <h1>Player 1 Start!</h1>
+        <i class="fas fa-play-circle fa-10x"></i>
+        <br /><br />
+
+        <p><input type="button" class="btn btn-primary btn-lg" value="Start Tab" onclick="location.href='@Url.Action("Create", "Tab")'" />
+
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-3" id="clickhere">
+        <h1>View <br /> Tab</h1>
+        <i class="far fa-pause-circle fa-10x"></i>
+        <br /><br />
+        <p><input type="button" class="btn btn-primary btn-lg" value="View Tab" onclick="location.href='@Url.Action("MyTabs", "Tab")'" />
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-3" id="clickhere">
+        <h1>Power Down</h1>
+        <i class="far fa-stop-circle fa-10x"></i>
+        <br /><br />
+        <p><input type="button" class="btn btn-primary btn-lg" value="Close Tab" onclick="location.href='@Url.Action("MyTabs", "Tab")'" />
+    </div>
+
+    </div>
+</div>

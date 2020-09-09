@@ -1,0 +1,74 @@
+﻿@model APPers.Models.Menu.MenuDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MenuDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TabName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TabName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BeerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BeerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderTotal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderTotal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderComplete)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderComplete)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedUtc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedUtc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedUtc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedUtc)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.OrderId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

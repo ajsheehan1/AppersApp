@@ -1,0 +1,118 @@
+﻿@model APPers.Models.Menu.MenuCreate
+
+@{
+    ViewBag.Title = "APPers Menu";
+}
+
+<h2>APPers Menu</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="row">
+        <h4>Select From One Of The Beers Below:</h4>
+
+        <h5>Haven't started a tab yet? <input type="button" class="btn btn-primary btn-secondary" value="Start Tab" onclick="location.href='@Url.Action("Create", "Tab")'" /> </h5>
+
+        <hr />
+
+        @foreach (APPers.Data.Beer item in ViewBag.BeerMenu)
+        {
+            if (item.InRotation == true)
+            {
+
+                <div class="col-md-4">
+                   
+                    <dl class="dl-horizontal">
+
+                        <dt>
+                            @Html.DisplayNameFor(modelItem => item.BeerName)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(modelItem => item.BeerName)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(modelItem => item.TypeOfBeer)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(modelItem => item.TypeOfBeer)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(modelItem => item.Price)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(modelItem => item.Price)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(modelItem => item.Description)
+                        </dt>
+
+                         @*This is for if I want to add pictures to each drink next to the menu items...*@ 
+                            <dt style="height: 200px; align-content; margin: auto;" >
+                            <img src="@Html.DisplayFor(modelItem => item.ImageURL)" style="background: none; opacity: 1.0; max-width: 100%; max-height: 100%;"/>
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </dd>
+
+                        
+
+
+                    </dl>
+                </div>
+            }
+        }
+</div>
+
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="dl-horizontal">
+            <div class="form-group">
+                @Html.LabelFor(model => model.TabId, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(model => model.TabId, ViewBag.TabId as SelectList, "---Assign Tab---")
+                    @Html.ValidationMessageFor(model => model.TabId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.BeerId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @*@Html.EditorFor(model => model.BeerId, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.DropDownListFor(model => model.BeerId, ViewBag.BeerId as SelectList, "---Select Beer---")
+                @Html.ValidationMessageFor(model => model.BeerId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Location, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(model => model.Location, "---Select Delivery Location---")
+                @Html.ValidationMessageFor(model => model.Location, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-primary btn-secondary" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Cancel", "Index", "Home")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

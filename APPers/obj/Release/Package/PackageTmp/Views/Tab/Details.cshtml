@@ -1,0 +1,130 @@
+﻿@model APPers.Models.Tab.TabDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h3>Tab</h3>
+<br />
+<h4>Order History</h4>
+<hr />
+
+
+
+<table class="table">
+    <b>
+        <tr>
+            <td>
+                OrderId
+            </td>
+            <td>
+                Location
+            </td>
+            <td>
+                Tab Name
+            </td>
+            <td>
+                Beer
+            </td>
+            <td>
+                Price
+            </td>
+            <td>
+                Delivered
+            </td>
+            <td>
+                Date Ordered
+            </td>
+        </tr>
+        <b>
+
+            @foreach (APPers.Models.Menu.MenuListItem model in ViewBag.OrderDetails)
+
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => model.OrderId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => model.Location)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => model.TabName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => model.BeerName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => model.OrderTotal)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => model.OrderComplete)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => model.CreatedUtc)
+                    </td>
+                </tr>
+            }
+
+</table>
+
+
+<br />
+<div>
+    <h4>Tab Total</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TabId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TabId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GrandTotal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GrandTotal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TabPaid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TabPaid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedUtc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedUtc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedUtc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedUtc)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TabId }) |
+    @Html.ActionLink("Back to List", "MyTabs")
+</p>
